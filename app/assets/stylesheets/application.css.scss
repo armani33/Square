@@ -14,14 +14,8 @@
  	*= require_self
  	*/
 
-	#social-links{
-	  text-align: center;
-	  list-style: none;
-	}
-	#social-links li{
-	  display: inline;
-	  margin-right:  20px;
-	}
+  @import "components/navbar";
+
 	#errors{
 	  list-style: none;
 	  color: red;

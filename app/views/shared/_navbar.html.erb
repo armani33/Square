@@ -5,21 +5,21 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <%= link_to root_path do %>
-          <%= image_tag('Logo.png', class: "navbar-brand page-scroll", style: "color: white;") %>
-          <!-- <p>Square</p> -->
+        <%= link_to root_path, class: "navbar-brand-link" do %>
+          <%= image_tag('Logo.png', class: "navbar-brand page-scroll") %>
+          <p>Square</p>
         <% end %>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Events", events_path %></li>
+          <!-- <li><%= link_to "Home", root_path %></li> -->
           <% if current_user %>
             <li><%= link_to "Create Event", create_event_path %></li>
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Logout", logout_path, method: "delete" %></li>
           <% else %>
-            <li><%= link_to "Sign Up", signup_path %></li>
+            <li id='create-event-btn'><%= link_to "Create Event", signup_path %></li>
+            <li><%= link_to "Browse Events", events_path %></li>
             <li><%= link_to "Login", login_path %></li>
           <% end %>
         </ul>
