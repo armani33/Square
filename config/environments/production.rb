@@ -35,6 +35,8 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+  config.public_file_server.enabled = true
+
   # Enable leverage browser caching for static resources
   config.public_file_server.headers = {
     'Cache-Control' => 'public, s-maxage=31536000, maxage=15552000',
