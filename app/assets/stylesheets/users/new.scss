@@ -9,11 +9,23 @@ h3.sign-up{
 .btn-singup{
   background-color: #1954FF;;
   color: white;
-  width: 360px;
+  width: 100%;
   font-weight: 500;
   &:hover{
     color: white;
     background-color: #1142CC;
+  }
+}
+@media (min-width: 1200px){
+  .btn-singup{
+    background-color: #1954FF;;
+    color: white;
+    width: 360px;
+    font-weight: 500;
+    &:hover{
+      color: white;
+      background-color: #1142CC;
+    }
   }
 }
 p.sign-up{
