@@ -32,7 +32,6 @@ gem 'font-awesome-sass'
 gem 'carrierwave-aws'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '4.9.4'
-gem 'fog'
 #Object geocoding
 gem 'geocoder'
 #Google Maps
