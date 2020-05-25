@@ -1,0 +1,24 @@
+img.sign-up{
+  margin-top: 15px;
+}
+h3.sign-up{
+  margin-top: 10px;
+  font-size: 40px;
+  font-weight: 600;
+}
+.btn-singup{
+  background-color: #1954FF;;
+  color: white;
+  width: 360px;
+  font-weight: 500;
+  &:hover{
+    color: white;
+    background-color: #1142CC;
+  }
+}
+p.sign-up{
+  font-size: 15px;
+  a{
+    color: #1954FF;
+  }
+}
