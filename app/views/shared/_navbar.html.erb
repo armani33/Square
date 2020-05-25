@@ -14,7 +14,8 @@
         <ul class="nav navbar-nav navbar-right">
           <!-- <li><%= link_to "Home", root_path %></li> -->
           <% if current_user %>
-            <li><%= link_to "Create Event", create_event_path %></li>
+            <li><%= link_to "Browse Events", events_path %></li>
+            <li id='create-event-btn'><%= link_to "Create Event", create_event_path %></li>
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Logout", logout_path, method: "delete" %></li>
           <% else %>
