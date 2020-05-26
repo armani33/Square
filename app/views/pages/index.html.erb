@@ -1,21 +1,20 @@
-  <% provide(:title, "connect around live events") %>
+<% provide(:title, "connect around live events") %>
 
+<%= render "shared/category_navbar" %>
+<div class="index-page-bg">
   <!-- Page Conent -->
   <header id="body-up">
     <div class="header-content">
       <div class="header-content-inner">
         <div class="left-text">
-          <h1 id="homeHeading">Connect around<br>virtual event</h1>
-          <hr>
-          <% if current_user %>
-            <h2>Check Out Upcoming Events By Clicking Below</h2><br>
+          <h1 id="homeHeading">Connect around<br><span>virtual event</span></h1>
+          <!-- <% if current_user %>
             <%= link_to "Browse All Events", events_path, class: "btn btn-primary btn-xl" %>
           <% else %>
-            <h2>Sign Up Now!</h2><br>
             <%= link_to "Sign Up!", signup_path, class: "btn btn-primary btn-xl" %>
-          <% end %>
+          <% end %> -->
         </div>
-        <%= image_tag('Webapp.png', class: "webapp", width: "650") %>
+        <%= image_tag('Webapp.png', class: "webapp") %>
       </div>
     </div>
   </header>
@@ -72,3 +71,4 @@
       </div>
     </div>
   </section>
+</div>

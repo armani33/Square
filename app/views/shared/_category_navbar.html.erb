@@ -1,0 +1,7 @@
+<div class="category-navbar">
+  <p class= 'active'>All</p>
+  <% Category.all.each do |category| %>
+    <p><%= category.name %></p>
+  <% end %>
+</div>
+

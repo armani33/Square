@@ -1,0 +1,116 @@
+.index-page-bg{
+  background-color: #FAFBFD;
+}
+header#body-up{
+  margin-top: -10px;
+  .header-content{
+    display: flex;
+    justify-content: center;
+    .header-content-inner{
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      .left-text{
+        border-radius: 8px;
+        background-color: white;
+        padding: 50px 100px 50px 70px;
+        margin-right: -130px;
+        h1#homeHeading{
+          font-family: 'Roboto';
+          font-size: 70px;
+          font-weight: 700;
+          line-height: 85px;
+          margin: 0;
+          margin-bottom: 10px;
+          span{
+            color: #1954FF;
+            font-size: 90px;
+          }
+        }
+      }
+      img{
+        width: 750px;
+      }
+    }
+    @media (max-width: 1300px){
+      .header-content-inner{
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        .left-text{
+          border-radius: 8px;
+          background-color: white;
+          padding: 40px 80px 40px 60px;
+          margin-right: -130px;
+          h1#homeHeading{
+            font-family: 'Roboto';
+            font-size: 55px;
+            font-weight: 700;
+            line-height: 85px;
+            margin: 0;
+            margin-bottom: 10px;
+            span{
+              font-size: 70px;
+            }
+          }
+        }
+        img{
+          width: 650px;
+        }
+      }
+    }
+    @media (max-width: 1050px){
+      .header-content-inner{
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        .left-text{
+          border-radius: 8px;
+          background-color: white;
+          padding: 20px 90px 20px 50px;
+          margin-right: -130px;
+          h1#homeHeading{
+            font-family: 'Roboto';
+            font-size: 45px;
+            font-weight: 700;
+            margin: 0;
+            margin-bottom: 10px;
+            span{
+              font-size: 57px;
+            }
+          }
+        }
+        img{
+          width: 550px;
+        }
+      }
+    }
+    @media (max-width: 900px){
+      .header-content-inner{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column-reverse;
+        .left-text{
+          border-radius: 8px;
+          background-color: white;
+          padding: 20px 50px 20px 50px;
+          margin: 0;
+          margin-top: -40px;
+          h1#homeHeading{
+            font-family: 'Roboto';
+            font-size: 45px;
+            font-weight: 700;
+            margin: 0;
+            margin-bottom: 10px;
+            span{
+              font-size: 57px;
+            }
+          }
+        }
+        img{
+          width: 550px;
+        }
+      }
+    }
+  }
+}
