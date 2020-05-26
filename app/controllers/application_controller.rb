@@ -9,7 +9,7 @@ private
   # Confirms a logged-in user.
   def logged_in_user
     unless current_user
-      flash[:danger] = "Please log in."
+      flash[:danger] = "Please log in or sign up first."
       redirect_to login_url
     end
   end

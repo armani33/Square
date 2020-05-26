@@ -1,18 +1,21 @@
-  <% provide(:title, "Home") %>
+  <% provide(:title, "connect around live events") %>
 
   <!-- Page Conent -->
   <header id="body-up">
     <div class="header-content">
       <div class="header-content-inner">
-        <h1 id="homeHeading">Start exploring, creating, and attending events now!</h1>
-        <hr>
-        <% if current_user %>
-          <h2>Check Out Upcoming Events By Clicking Below</h2><br>
-          <%= link_to "Browse All Events", events_path, class: "btn btn-primary btn-xl" %>
-        <% else %>
-          <h2>Sign Up Now!</h2><br>
-          <%= link_to "Sign Up!", signup_path, class: "btn btn-primary btn-xl" %>
-        <% end %>
+        <div class="left-text">
+          <h1 id="homeHeading">Connect around<br>virtual event</h1>
+          <hr>
+          <% if current_user %>
+            <h2>Check Out Upcoming Events By Clicking Below</h2><br>
+            <%= link_to "Browse All Events", events_path, class: "btn btn-primary btn-xl" %>
+          <% else %>
+            <h2>Sign Up Now!</h2><br>
+            <%= link_to "Sign Up!", signup_path, class: "btn btn-primary btn-xl" %>
+          <% end %>
+        </div>
+        <%= image_tag('Webapp.png', class: "webapp", width: "650") %>
       </div>
     </div>
   </header>
