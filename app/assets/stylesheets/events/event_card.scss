@@ -1,0 +1,17 @@
+.event-card{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  .card-top{
+    flex-basis: 130px;
+    img{
+      object-fit: cover;
+    }
+  }
+  .card-bottom{
+    flex-basis: 50%;
+    .wrap{
+
+    }
+  }
+}
