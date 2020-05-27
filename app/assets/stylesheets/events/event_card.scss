@@ -1,17 +1,33 @@
 .event-card{
-  border: 1px solid red;
+  background-color: white;
   display: flex;
   flex-direction: column;
-  .card-top{
-    flex-basis: 130px;
+  margin: 15px;
+  box-shadow: 0 0 5px #EAEAEA;
+  border-radius: 3px;
+  .image-card{
     img{
-      object-fit: cover;
+      border-radius: 3px 3px 0 0;
+      max-height: 135px;
     }
   }
   .card-bottom{
-    flex-basis: 50%;
-    .wrap{
-
+    background-color: white;
+    position: relative;
+    min-height: 130px;
+    p.date-time{
+      color: #1954FF;
+      margin-top: 25px;
+      padding-left: 10px;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 15px;
+    }
+    h4.title{
+      font-family: 'Roboto';
+      font-weight: 500;
+      font-size: 23px;
+      padding-left: 10px;
     }
   }
 }

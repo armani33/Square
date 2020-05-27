@@ -21,6 +21,11 @@
   @import "events/index";
   @import "events/event_card";
 
+
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
   body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
   }

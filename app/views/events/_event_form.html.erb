@@ -2,15 +2,15 @@
   <%= javascript_include_tag 'google-places.js' %>
   <% end %>
 
-    <%= form_for(@event, url: url, html: { multipart: true }) do |f| %> 
+    <%= form_for(@event, url: url, html: { multipart: true }) do |f| %>
       <%= render "shared/error_messages", object: f.object %>
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
           <%= f.label :title, "Title"%><span id="required">*</span>
           <%= f.text_field :title, class: "form-control" %>
           <p class="help-block"></p>
-        </div> 
-      </div> 
+        </div>
+      </div>
 
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">
@@ -19,14 +19,6 @@
           <p class="help-block"></p>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-lg-6 col-lg-offset-3">
-          <%= f.label :address, "Address / Location" %><span id="required">*</span>
-          <%= f.text_field :address, class: "form-control", id: "txtautocomplete" %>
-          <p class="help-block"></p>
-        </div> 
-      </div> 
 
       <div class="row">
         <div class="col-lg-6 col-lg-offset-3">

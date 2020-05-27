@@ -1,25 +1,23 @@
-<div class="col-sm-4 col-lg-4 col-md-4" onclick="document.location='<%= event_path(event.id)%>'" style="cursor: pointer;">
-  <div class="event-card">
-    <div class="card-top">
-      <% if event.picture? %>
-        <%= image_tag event.picture.thumb.url, class: "img-responsive", id: "event-thumbnail", alt: event.picture %>
+<div class="event-card" onclick="document.location='<%= event_path(event.id)%>'" style="cursor: pointer;">
+  <div class="image-card">
+    <% if event.picture? %>
+      <%= image_tag event.picture.thumb.url, class: "img-responsive", alt: event.picture, style: 'height: 100%; width: 100%; object-fit: cover';%>
+    <% else %>
+      <%= image_tag "event-index-default.jpg", alt: "default-image" %>
+    <% end %>
+  </div>
+  <div class="card-bottom">
+    <p class="date-time"><%= event.date.strftime("%a, %b %d %Y") %>
+    <%= event.date.strftime(" %I : %M %p") %></p>
+    <h4 class="title"><%= truncate event.title, length: 40 %></h4>
+    <!-- <div class="attendees">
+      <% if event.date > Time.now %>
+        <p><%= pluralize(event.attendees.count, 'person') %> attending</p>
       <% else %>
-        <%= image_tag "event-index-default.jpg", alt: "default-image", id: "event-thumbnail" %>
+        <p><%= pluralize(event.attendees.count, 'person') %> attended</p>
       <% end %>
-    </div>
-    <div class="card-bottom">
-      <h4 class="wrap"><%= truncate event.title, length: 49 %></h4>
-      <p>Created by: <%= link_to event.user.name, event.user %><br>
-      <%= event.date.strftime("Date: %a, %b %d %Y") %><br>
-      <%= event.date.strftime("Time: %I : %M %p") %><br>
-      Category: <a href="/events?utf8=✓&search=&category=<%=event.category_id %>"><%= Category.find(event.category_id).name %></a></p>
-      <div class="attendees">
-        <% if event.date > Time.now %>
-          <p><%= pluralize(event.attendees.count, 'person') %> attending</p>
-        <% else %>
-            <p><%= pluralize(event.attendees.count, 'person') %> attended</p>
-        <% end %>
-      </div>
-    </div>
+    </div> -->
+    <!-- <p>Created by: <%= link_to event.user.name, event.user %><br> -->
+    <!-- Category: <a href="/events?utf8=✓&search=&category=<%=event.category_id %>"><%= Category.find(event.category_id).name %></a></p> -->
   </div>
 </div>
