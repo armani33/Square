@@ -7,13 +7,10 @@ class Event < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   validates :title, presence: true, length: {maximum: 100}
   validates :description, presence: true, length: {maximum: 1000}
-  validates :address, presence: true
   validates :category_id, presence: true
   validate  :picture_size
   after_validation :normalize_title
-  after_validation :exclude_united_states_text_from_address
-  geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
+
 
   def Event.upcoming()
     Event.all.where("date > ?", Time.now)
@@ -51,7 +48,4 @@ private
     self.title = title.downcase.titleize
   end
 
-  def exclude_united_states_text_from_address
-    self.address = address.gsub!(/(united states)/i, " ").strip!.chomp!(",") if address.downcase.include?("united states")
-  end
 end
