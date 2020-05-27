@@ -1,7 +1,8 @@
 <div class="category-navbar">
-  <p class= 'active'>All</p>
+  <a href="/events" class= 'active'>All</a>
   <% Category.all.each do |category| %>
-    <p><%= category.name %></p>
+    <a href="/events?utf8=✓&search=&category=<%=category.id %>"><%= category.name %></a>
+    <!-- <p><%= category.name %></p> -->
   <% end %>
 </div>
 

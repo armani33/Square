@@ -3,12 +3,18 @@
   white-space: nowrap;
   border-bottom: 1px solid rgba(34, 34, 34, 0.05);
   padding-bottom: 9px;
-  p{
+  // position: fixed;
+  // top: 1;
+  // background-color: #FAFBFD;
+  // margin-top: -9px;
+  a{
     display: inline-block;
     padding: 5px 20px;
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     margin: 0 5px;
+    color: #5F666F;
+    text-decoration: none;
     &:first-child{
       margin-left: 20px;
     }
