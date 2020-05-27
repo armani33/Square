@@ -1,8 +1,20 @@
-<div class="category-navbar">
-  <a href="/events" class= 'active'>All</a>
+<div id="category-menu" class="category-navbar">
+  <a href="/events" id="all-btn" class= "active">All</a>
   <% Category.all.each do |category| %>
-    <a href="/events?utf8=✓&search=&category=<%=category.id %>"><%= category.name %></a>
-    <!-- <p><%= category.name %></p> -->
+    <a class="category-btn" href="/events?utf8=✓&search=&category=<%=category.id %>"><%= category.name %></a>
   <% end %>
 </div>
+
+
+<script>
+const params = new URLSearchParams(window.location.search);
+var category_id = params.get('category');
+
+var all_btn = document.getElementById("all-btn");
+var header = document.getElementById("category-menu");
+var btns = header.getElementsByClassName("category-btn");
+
+btns[category_id - 1].classList.add("active");
+all_btn.classList.remove("active");
+</script>
 
