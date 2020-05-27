@@ -13,8 +13,9 @@ header#body-up{
       .left-text{
         border-radius: 8px;
         background-color: white;
-        padding: 50px 100px 50px 70px;
+        padding: 40px 100px 40px 70px;
         margin-right: -130px;
+        text-align: center;
         h1#homeHeading{
           font-family: 'Roboto';
           font-size: 70px;
@@ -22,9 +23,24 @@ header#body-up{
           line-height: 85px;
           margin: 0;
           margin-bottom: 10px;
+          color: black;
           span{
             color: #1954FF;
             font-size: 90px;
+          }
+        }
+        a{
+          margin-top: 10px;
+          background-color: white;
+          border-radius: 50px;
+          border: 2px solid black;
+          color: black;
+          width: 45%;
+          font-weight: 500;
+          &:hover{
+            color: white;
+            background-color: #1954FF;
+            border-color: #1954FF;
           }
         }
       }
@@ -32,7 +48,7 @@ header#body-up{
         width: 750px;
       }
     }
-    @media (max-width: 1300px){
+    @media (max-width: 1400px){
       .header-content-inner{
         margin-top: 50px;
         display: flex;
@@ -40,7 +56,7 @@ header#body-up{
         .left-text{
           border-radius: 8px;
           background-color: white;
-          padding: 40px 80px 40px 60px;
+          padding: 20px 80px 20px 60px;
           margin-right: -130px;
           h1#homeHeading{
             font-family: 'Roboto';
@@ -148,6 +164,23 @@ header#body-up{
   }
 }
 
+aside.body-down{
+  margin-top: -20px;
+  .service-box{
+    i{
+      font-size: 50px;
+    }
+    h3{
+      a{
+        color: #2A5FF6;
+      }
+    }
+  }
+}
+
+section#events-container{
+  background-color: #FAFBFD;
+}
 
 
 

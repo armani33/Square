@@ -8,22 +8,22 @@
       <div class="header-content-inner">
         <div class="left-text">
           <h1 id="homeHeading">Connect around<br><span>virtual event</span></h1>
-          <!-- <% if current_user %>
-            <%= link_to "Browse All Events", events_path, class: "btn btn-primary btn-xl" %>
+          <% if current_user %>
+            <%= link_to "Browse All Events", events_path, class: "btn btn-primary" %>
           <% else %>
-            <%= link_to "Sign Up!", signup_path, class: "btn btn-primary btn-xl" %>
-          <% end %> -->
+            <%= link_to "Sign Up!", signup_path, class: "btn btn-primary" %>
+          <% end %>
         </div>
         <%= image_tag('Webapp.png', class: "webapp") %>
       </div>
     </div>
   </header>
 
-  <aside class="bg-dark">
+  <aside class="body-down">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h1 id="homeHeading">Always find virtual things to do!</h1>
+          <!-- <h1 id="homeHeading">Always find virtual things to do!</h1> -->
           <hr class="primary">
         </div>
       </div>
@@ -34,40 +34,38 @@
           <div class="service-box">
             <i class="fa fa-4x fa-search"></i>
             <h3><%= link_to "Explore Events", events_path %></h3>
-            <p class="text-faded">You can search events by name, zip code, city, and categories!</p>
+            <p class="text-faded">You can search virtual events by name or categories!</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 text-center">
           <div class="service-box">
             <i class="fa fa-4x fa-calendar"></i>
             <h3><%= link_to "Create Events", create_event_path %></h3>
-            <p class="text-faded">Create your own events and start invting you friends!</p>
+            <p class="text-faded">Create your own virtual events and start earning money!</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 text-center">
           <div class="service-box">
             <i class="fa fa-4x fa-user-plus"></i>
             <h3><%= link_to "Attend Events", events_path %></h3>
-            <p class="text-faded">Once you find an event you're interested in, you can choose to attend the event.</p>
+            <p class="text-faded">Find and attend virtual events which you're interested in!</p>
           </div>
         </div>
       </div>
     </div>
   </aside>
 
-  <section id="contact">
+  <section id="events-container">
     <div class="col-md-8 col-md-offset-2 text-center">
       <div class="row">
-        <h3 id="events">Events Near You</h3>
-        <hr>
         <% if @events.any? %>
           <%= render @events %>
         <% else %>
-          <p>No events nearby</p>
+          <p>No events</p>
         <% end %>
       </div>
       <div class="row">
-        <%= link_to "Browse All Events", events_path, class: "btn btn-primary btn-xl" %>
+        <% link_to "Browse All Events", events_path, class: "btn btn-primary btn-xl" %>
       </div>
     </div>
   </section>
