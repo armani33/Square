@@ -1,5 +1,5 @@
-  <% provide(:title, "All Events") %> 
-
+  <% provide(:title, "All Events") %>
+  <%= render "shared/category_navbar" %>
   <!-- Page Content -->
   <div class="container">
     <div class="row">
@@ -24,7 +24,7 @@
           <h4><b>Filter by Timeline</b></h4>
           <div class="list-group">
             <%= submit_tag "Upcoming Events", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
-            <%= submit_tag "Past Events", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>      
+            <%= submit_tag "Past Events", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
           </div>
         <% end %>
 

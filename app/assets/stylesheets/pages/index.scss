@@ -167,11 +167,15 @@ header#body-up{
 aside.body-down{
   margin-top: -20px;
   .service-box{
-    i{
-      font-size: 50px;
-    }
-    h3{
-      a{
+    a{
+      i{
+        font-size: 50px;
+        color: #333333;
+      }
+      h3{
+        color: #2A5FF6;
+      }
+      &:hover{
         color: #2A5FF6;
       }
     }

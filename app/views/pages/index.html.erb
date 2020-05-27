@@ -32,22 +32,28 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 text-center">
           <div class="service-box">
-            <i class="fa fa-4x fa-search"></i>
-            <h3><%= link_to "Explore Events", events_path %></h3>
+            <%= link_to events_path do %>
+              <i class="fa fa-4x fa-search"></i>
+              <h3>Explore Events</h3>
+            <% end %>
             <p class="text-faded">You can search virtual events by name or categories!</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 text-center">
           <div class="service-box">
-            <i class="fa fa-4x fa-calendar"></i>
-            <h3><%= link_to "Create Events", create_event_path %></h3>
+            <%= link_to create_event_path do %>
+              <i class="fa fa-4x fa-calendar"></i>
+              <h3>Create Events</h3>
+            <% end %>
             <p class="text-faded">Create your own virtual events and start earning money!</p>
           </div>
         </div>
         <div class="col-lg-4 col-md-6 text-center">
           <div class="service-box">
-            <i class="fa fa-4x fa-user-plus"></i>
-            <h3><%= link_to "Attend Events", events_path %></h3>
+            <%= link_to events_path do %>
+              <i class="fa fa-4x fa-user-plus"></i>
+              <h3>Attend Events</h3>
+            <% end %>
             <p class="text-faded">Find and attend virtual events which you're interested in!</p>
           </div>
         </div>
