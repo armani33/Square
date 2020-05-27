@@ -102,10 +102,8 @@ GEM
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     formatador (0.2.5)
-    geocoder (1.6.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    gmaps4rails (2.1.2)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -267,8 +265,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   dotenv-rails
   font-awesome-sass
-  geocoder
-  gmaps4rails
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   i18n

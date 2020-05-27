@@ -32,10 +32,6 @@ gem 'font-awesome-sass'
 gem 'carrierwave-aws'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '4.9.4'
-#Object geocoding
-gem 'geocoder'
-#Google Maps
-gem 'gmaps4rails'
 #Ruby I18n
 gem 'i18n'
 # Suite of testing facilities supporting TDD, BDD, mocking, and benchmarking

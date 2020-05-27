@@ -31,10 +31,6 @@ class EventsController < ApplicationController
     @category = Category.find(@event.category_id).name
     @comments = @event.comments
     @comment = Comment.new
-    @hash = Gmaps4rails.build_markers(@event) do |event, marker|
-      marker.lat event.latitude
-      marker.lng event.longitude
-    end
   end
 
   def edit
