@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @events = Event.all
+    @events = Event.upcoming.all
   end
 
   def about
