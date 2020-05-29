@@ -22,7 +22,7 @@ header#body-up{
           font-weight: 700;
           line-height: 85px;
           margin: 0;
-          margin-bottom: 10px;
+          margin-bottom: 30px;
           color: black;
           span{
             color: #1954FF;
@@ -30,17 +30,23 @@ header#body-up{
           }
         }
         a{
-          margin-top: 10px;
           background-color: white;
           border-radius: 50px;
           border: 2px solid black;
           color: black;
           width: 45%;
           font-weight: 500;
+          padding: 8px 25px;
+          text-decoration: none;
           &:hover{
             color: white;
             background-color: #1954FF;
             border-color: #1954FF;
+          }
+        }
+        @media (max-width: 500px){
+          a{
+            border: 1px solid black;
           }
         }
       }

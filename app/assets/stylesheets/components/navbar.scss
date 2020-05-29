@@ -13,7 +13,6 @@
 }
 .left-side-nav{
   display: flex;
-  justify-content: space-between;
   align-items: center;
   .search-bar{
     margin-left: 25px;
@@ -143,7 +142,11 @@ form#search-bar{
   }
 }
 
-
+@media (max-width: 500px){
+  form#search-bar{
+    display: none;
+  }
+}
 
 
 

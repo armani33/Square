@@ -9,9 +9,9 @@
         <div class="left-text">
           <h1 id="homeHeading">Connect around<br><span>virtual event</span></h1>
           <% if current_user %>
-            <%= link_to "Browse All Events", events_path, class: "btn btn-primary" %>
+            <%= link_to "Browse All Events", events_path %>
           <% else %>
-            <%= link_to "Sign Up!", signup_path, class: "btn btn-primary" %>
+            <%= link_to "Sign Up!", signup_path %>
           <% end %>
         </div>
         <%= image_tag('Webapp.png', class: "webapp") %>
