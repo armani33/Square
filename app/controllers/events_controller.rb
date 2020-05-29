@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    if params[:category]
+    if params[:search]
       @events =  Event.search(params).paginate(page: params[:page], per_page: 12)
     else
       @events =  Event.upcoming.paginate(page: params[:page], per_page: 12)

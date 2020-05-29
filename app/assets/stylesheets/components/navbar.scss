@@ -11,6 +11,17 @@
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 600;
 }
+.left-side-nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .search-bar{
+    margin-left: 25px;
+    input{
+      color: black;
+    }
+  }
+}
 .navbar-brand-link{
   display: flex;
   align-items: center;
@@ -93,3 +104,63 @@
 #mainNav{
   background-color: white;
 }
+
+
+form#search-bar{
+  background-color: #F7F8FC;
+  width: 300px;
+  height: 42px;
+  border-radius: 5px;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  input {
+    all: unset;
+    font: 16px system-ui;
+    color: black;
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    background-color: transparent;
+  }
+  ::placeholder {
+    color: #5F666F;
+    opacity: 0.7;
+  }
+  svg {
+    color: #5F666F;
+    fill: currentColor;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+  }
+
+  button {
+    all: unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

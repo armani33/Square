@@ -5,10 +5,20 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <%= link_to root_path, class: "navbar-brand-link" do %>
-          <%= image_tag('Logo.png', class: "navbar-brand page-scroll") %>
-          <p>Square</p>
-        <% end %>
+        <div class='left-side-nav'>
+          <%= link_to root_path, class: "navbar-brand-link" do %>
+            <%= image_tag('Logo.png', class: "navbar-brand page-scroll") %>
+            <p>Square</p>
+          <% end %>
+          <div class="search-bar">
+            <form role="search" action="/events" accept-charset="UTF-8" method="get" id="search-bar">
+              <input type="search" id="search" params="search" name="search" placeholder="Search events" aria-label="Search through site content">
+              <button>
+                <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
@@ -27,3 +37,28 @@
       </div>
     </div>
   </nav>
+
+
+
+<!-- <script>
+  const f = document.getElementById('form');
+  const q = document.getElementById('query');
+  const google = 'https://www.google.com/search?q=site%3A+';
+  const site = 'pagedart.com';
+
+  function submitted(event) {
+    event.preventDefault();
+    const url = google + site + '+' + q.value;
+    const win = window.open(url, '_blank');
+    win.focus();
+  }
+
+  f.addEventListener('submit', submitted);
+</script> -->
+
+
+
+
+
+
+
