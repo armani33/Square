@@ -1,5 +1,5 @@
 <div id="category-menu" class="category-navbar">
-  <a href="/events" id="all-btn" class= "active">All</a>
+  <a href="/events?utf8=✓&search=&category=0" id="all-btn" class= "active">All</a>
   <% Category.all.each do |category| %>
     <a class="category-btn" href="/events?utf8=✓&search=&category=<%=category.id %>"><%= category.name %></a>
   <% end %>
@@ -9,6 +9,7 @@
 <script>
 const params = new URLSearchParams(window.location.search);
 var category_id = params.get('category');
+
 
 var all_btn = document.getElementById("all-btn");
 var header = document.getElementById("category-menu");

@@ -3,9 +3,9 @@ class EventsController < ApplicationController
 
   def index
     if params[:search]
-      @events =  Event.search(params).paginate(page: params[:page], per_page: 12)
+      @events =  Event.search(params).paginate(page: params[:page], per_page: 3)
     else
-      @events =  Event.upcoming.paginate(page: params[:page], per_page: 12)
+      @events =  Event.upcoming.paginate(page: params[:page], per_page: 35)
     end
   end
 
@@ -67,6 +67,6 @@ class EventsController < ApplicationController
 private
 
   def event_params
-    params.require(:event).permit(:title, :description, :date, :category_id, :picture, :address, :latitude, :longitude)
+    params.require(:event).permit(:title, :description, :date, :category_id, :picture)
   end
 end

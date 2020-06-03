@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 ruby '2.6.5'
 
+
+gem 'by_star', git: "git://github.com/radar/by_star"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
 # Use PostGres as the database

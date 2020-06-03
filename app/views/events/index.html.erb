@@ -1,36 +1,45 @@
-  <% provide(:title, "All Events") %>
+  <% provide(:title, "Connect around live events") %>
   <%= render "shared/category_navbar" %>
   <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <!-- <div class="col-md-3 text-center" id="search-sidebar">
+  <div class="main-event-page">
+    <div class="col-md-3">
+      <div id="search-sidebar">
         <h4><b>Search by</b></h4>
         <%= form_tag events_path, method: :get do %>
-          <%= label_tag :search, "Name / Description: " %>
-          <%= text_field_tag :search, params[:search], placeholder: "Party, Soccer, Concert, etc.", class: "form-control" %>
+
           <p class="help-block"></p>
+          <%= hidden_field_tag :search, params[:search] %>
+          <%= hidden_field_tag :category, params[:category] %>
 
-          <%= label_tag :category, "Category: " %><br>
-          <%= select_tag :category, options_for_select([["All", "0"], ["Arts", "1"], ["Business", "2"], ["Charity", "3"], ["Education", "4"], ["Fashion", "5"], ["Film & Media", "6"], ["Food & Drink", "7"], ["Health", "8"], ["Hobbies", "9"], ["Holiday", "10"], ["Music", "11"], ["Science & Tech", "12"], ["Spirituality", "13"], ["Sports & Fitness", "14"], ["Travel & Outdoor", "15"], ["Other", "16"]], params[:category] ), class: "form-control" %>
-          <p class="help-block"></p>
-
-          <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
-          <p class="help-block"></p><br>
-
-          <h4><b>Filter by Timeline</b></h4>
+          <h4><b>Date</b></h4>
           <div class="list-group">
-            <%= submit_tag "Upcoming Events", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
+            <%= submit_tag "Tomorrow", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
+            <%= submit_tag "Today", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
+            <%= submit_tag "Yesterday", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
+            <%= submit_tag "This Weekend", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
+            <%= submit_tag "Any Day", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
+
             <%= submit_tag "Past Events", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
           </div>
+          <p class="help-block"></p>
+
         <% end %>
- -->
+        <div class="list-group">
+          <h4><b>Category</b></h4>
+          <a href="/events?utf8=✓&search=&category=0" id="all-btn" class= "list-group-item" style="text-align: left;">All</a>
+          <% Category.all.each do |category| %>
+            <a class="category-btn list-group-item" href="/events?utf8=✓&search=&category=<%=category.id %>" style="text-align: left;"><%= category.name %></a>
+          <% end %>
+        </div>
       </div>
+    </div>
+  </div>
 
       <div class="events-container">
         <h3 id="events"><%= params[:timeline] == "Past Events" ? "Past Events" : "Upcoming Events" %></h3>
         <div>(<%= page_entries_info @events %>)</div>
         <hr>
-        <%= will_paginate %><br>
+
         <% if @events.any? %>
           <%= render @events %>
         <% end %>
@@ -42,4 +51,7 @@
     </div>
   </div>
 </div>
+
+
+
 

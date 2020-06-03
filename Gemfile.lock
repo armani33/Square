@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/radar/by_star
+  revision: 3b538097ee90b01a5ffa13a158ebb615f7b65ee5
+  specs:
+    by_star (4.0.0)
+      activesupport (>= 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -259,6 +266,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass (>= 3.4.1)
   bootstrap-will_paginate (= 0.0.10)
+  by_star!
   byebug
   carrierwave (~> 2.0)
   carrierwave-aws
