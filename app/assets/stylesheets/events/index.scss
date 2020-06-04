@@ -6,8 +6,11 @@
 #sidebar{
   min-width: 250px;
   max-width: 250px;
-  background-color: #F7F8FC;
-  min-height: 100vh;
+  background-color: #FAFBFF;//#F5F6F8;
+  height: 100vh;
+  padding-left: 20px;
+  overflow: auto;
+  padding-bottom: 100px;
   // position: fixed;
   // top: 1;
   // .shadow{
@@ -16,6 +19,46 @@
   //   margin-top: -3px;
   //   box-shadow: 2px 2px 3px rgba(0,0,0,0.16);
   // }
+  .sidebar-header{
+    margin-bottom: 40px;
+    h4{
+      font-family: 'Roboto';
+      font-size: 20px;
+      font-weight: 600;
+      color: #0B1D67;
+    }
+  }
+  .filters-menu{
+    h5{
+      font-family: 'Roboto';
+      font-size: 16px;
+      font-weight: 600;
+      color: #0B1D67;
+    }
+    .list-menu-sidebar{
+      input.time-btn{
+        text-align: left;
+        border: none;
+        background-color: transparent;
+        padding: 5px 0;
+        padding-left: 15px;
+        color: #2B2E38;
+      }
+    }
+    .category-filter-links{
+      display: flex;
+      flex-direction: column;
+      a{
+        text-align: left;
+        border: none;
+        background-color: transparent;
+        padding: 5px 0;
+        padding-left: 15px;
+        color: #2B2E38;
+        text-decoration: none;
+      }
+    }
+  }
 }
 #sidebar.active {
     margin-left: -250px;
@@ -24,6 +67,7 @@
   position: fixed;
   top: 60px;
   left: 0;
+  overflow-y: scroll;
 }
 #sidebare-behind{
   min-width: 250px;
@@ -53,7 +97,16 @@ a[data-toggle="collapse"] {
   transform: translateY(-50%);
 }
 #events-container{
+  padding-top: 20px;
   width: 100%;
+  h3{
+    text-align: center;
+  }
+  .page-event-numbers{
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
 }
 .events-grid-container{
   padding: 60px;
@@ -64,7 +117,28 @@ a[data-toggle="collapse"] {
   grid-template-rows : minmax(264px, auto);/*min-height of each sub-grid = 264px and max=height=auto */
   grid-gap : 0px;
 }
-
+.pagination{
+  li.active{
+    a{
+      border-color: #1954FF;
+      background-color: #1954FF;
+      &:hover{
+        border-color: #1142CC;
+        background-color: #1142CC;
+      }
+    }
+  }
+  li{
+    a{
+      color: #1954FF;
+    }
+  }
+  li.next{
+    a{
+      color: #1954FF;
+    }
+  }
+}
 @media (max-width: 1100px) {
   .events-container {
     width: 100%;

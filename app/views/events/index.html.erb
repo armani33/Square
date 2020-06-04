@@ -7,41 +7,40 @@
 
     <div id="sidebar">
       <div class="sidebar-header">
-        <h4><b>Filters</b></h4>
+        <h4>Filters</h4>
       </div>
       <div class="filters-menu">
         <%= form_tag events_path, method: :get do %>
           <%= hidden_field_tag :search, params[:search] %>
           <%= hidden_field_tag :category, params[:category] %>
 
-          <a href="#timeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><h4><b>Date</b></h4></a>
+          <!-- <a href="#timeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><h4></a> -->
+            <h5>Date</h5>
           <div class="list-menu-sidebar">
-            <%= submit_tag "Tomorrow", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
-            <%= submit_tag "Today", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
-            <%= submit_tag "Yesterday", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
-            <%= submit_tag "This Weekend", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
-              <ul class="collapse list-unstyled" id="timeSubmenu">
-                <li>
-                    <%= submit_tag "Any Day", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
-                </li>
-                <li>
-                    <%= submit_tag "Past Events", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
-                </li>
-              </ul>
-          </div>
-          <p class="help-block"></p>
+            <%= submit_tag "Any Day", name: "timeline", id: "timeline", class: "time-btn", style: "width: 100%" %>
+            <%= submit_tag "Today", name: "timeline", id: "timeline", class: "time-btn", style: "width: 100%" %>
+            <%= submit_tag "Tomorrow", name: "timeline", id: "timeline", class: "time-btn", style: "width: 100%" %>
+            <%= submit_tag "This Weekend", name: "timeline", id: "timeline", class: "time-btn", style: "width: 100%" %>
+            <%= submit_tag "This Week", name: "timeline", id: "timeline", class: "time-btn", style: "width: 100%" %>
+            <%= submit_tag "Yesterday", name: "timeline", id: "timeline", class: "time-btn", style: "width: 100%" %>
+            <%= submit_tag "All Past Events", name: "timeline", id: "timeline", class: "time-btn", style: "width: 100%" %>
+            <!-- <ul class="collapse list-unstyled" id="timeSubmenu">
+              <li>
 
+              </li>
+              <li>
+
+              </li>
+            </ul> -->
+          </div>
         <% end %>
-        <div class="list-menu-sidebar">
-          <a href="#categorySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><h4><b>Category</b></h4></a>
+
+        <h5>Category</h5>
+        <div class="category-filter-links">
           <a href="/events?utf8=✓&search=&category=0" id="all-btn" class= "" style="text-align: left;">All</a>
-          <ul class="collapse list-unstyled" id="categorySubmenu">
-            <% Category.all.each do |category| %>
-            <li>
-              <a class="category-btn " href="/events?utf8=✓&search=&category=<%=category.id %>" style="text-align: left;"><%= category.name %></a>
-            </li>
+          <% Category.all.each do |category| %>
+            <a class="category-btn " href="/events?utf8=✓&search=&category=<%=category.id %>" style="text-align: left;"><%= category.name %></a>
           <% end %>
-          </ul>
         </div>
       </div>
     </div>
@@ -49,8 +48,9 @@
 
 
     <div id="events-container">
-      <h3 id="events"><%= params[:timeline] == "Past Events" ? "Past Events" : "Upcoming Events" %></h3>
-      <div>(<%= page_entries_info @events %>)</div>
+      <!-- <h3 id="events"><%= params[:timeline] == "Past Events" ? "Past Events" : "Upcoming Events" %></h3> -->
+      <h3>Connect Around Live event</h3>
+      <div class="page-event-numbers">(<%= page_entries_info @events %>)</div>
 
       <section class="events-grid-container">
         <% if @events.any? %>

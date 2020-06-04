@@ -34,12 +34,13 @@ class Event < ActiveRecord::Base
     if params[:timeline].nil?
       events = events.upcoming
     else
-      events = events.past if params[:timeline] == "Past Events"
+      events = events.past if params[:timeline] == "All Past Events"
       events = events.upcoming if params[:timeline] == "Any Day"
       events = events.tomorrow if params[:timeline] == "Tomorrow"
       events = events.today if params[:timeline] == "Today"
       events = events.yesterday if params[:timeline] == "Yesterday"
       events = events.by_weekend if params[:timeline] == "This Weekend"
+      events = events.next_week if params[:timeline] == "This Week"
     end
 
     if params[:start_date] && params[:end_date]
