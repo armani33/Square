@@ -1,48 +1,65 @@
+
+
   <% provide(:title, "Connect around live events") %>
   <%= render "shared/category_navbar" %>
   <!-- Page Content -->
   <div class="main-event-page">
-    <div class="col-md-3">
-      <div id="search-sidebar">
-        <h4><b>Search by</b></h4>
-        <%= form_tag events_path, method: :get do %>
 
-          <p class="help-block"></p>
+    <div id="sidebar">
+      <div class="sidebar-header">
+        <h4><b>Filters</b></h4>
+      </div>
+      <div class="filters-menu">
+        <%= form_tag events_path, method: :get do %>
           <%= hidden_field_tag :search, params[:search] %>
           <%= hidden_field_tag :category, params[:category] %>
 
-          <h4><b>Date</b></h4>
-          <div class="list-group">
-            <%= submit_tag "Tomorrow", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
-            <%= submit_tag "Today", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
-            <%= submit_tag "Yesterday", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
-            <%= submit_tag "This Weekend", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
-            <%= submit_tag "Any Day", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
-
-            <%= submit_tag "Past Events", name: "timeline", id: "timeline", class: "list-group-item", style: "width: 100%" %>
+          <a href="#timeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><h4><b>Date</b></h4></a>
+          <div class="list-menu-sidebar">
+            <%= submit_tag "Tomorrow", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
+            <%= submit_tag "Today", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
+            <%= submit_tag "Yesterday", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
+            <%= submit_tag "This Weekend", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
+              <ul class="collapse list-unstyled" id="timeSubmenu">
+                <li>
+                    <%= submit_tag "Any Day", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
+                </li>
+                <li>
+                    <%= submit_tag "Past Events", name: "timeline", id: "timeline", class: "", style: "width: 100%" %>
+                </li>
+              </ul>
           </div>
           <p class="help-block"></p>
 
         <% end %>
-        <div class="list-group">
-          <h4><b>Category</b></h4>
-          <a href="/events?utf8=✓&search=&category=0" id="all-btn" class= "list-group-item" style="text-align: left;">All</a>
-          <% Category.all.each do |category| %>
-            <a class="category-btn list-group-item" href="/events?utf8=✓&search=&category=<%=category.id %>" style="text-align: left;"><%= category.name %></a>
+        <div class="list-menu-sidebar">
+          <a href="#categorySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><h4><b>Category</b></h4></a>
+          <a href="/events?utf8=✓&search=&category=0" id="all-btn" class= "" style="text-align: left;">All</a>
+          <ul class="collapse list-unstyled" id="categorySubmenu">
+            <% Category.all.each do |category| %>
+            <li>
+              <a class="category-btn " href="/events?utf8=✓&search=&category=<%=category.id %>" style="text-align: left;"><%= category.name %></a>
+            </li>
           <% end %>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
+    <div id="sidebare-behind" class= "hidden"></div>
 
-      <div class="events-container">
-        <h3 id="events"><%= params[:timeline] == "Past Events" ? "Past Events" : "Upcoming Events" %></h3>
-        <div>(<%= page_entries_info @events %>)</div>
-        <hr>
 
+    <div id="events-container">
+      <h3 id="events"><%= params[:timeline] == "Past Events" ? "Past Events" : "Upcoming Events" %></h3>
+      <div>(<%= page_entries_info @events %>)</div>
+
+      <section class="events-grid-container">
         <% if @events.any? %>
           <%= render @events %>
+        <% else %>
+          <p>No events in this category</p>
         <% end %>
+      </section>
+
       <div class="col-md-12 text-center">
         <div class="row">
           <%= will_paginate %>
@@ -50,8 +67,34 @@
       </div>
     </div>
   </div>
-</div>
+
+<script>
 
 
+  $(document).ready(function () {
+
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+
+  });
+
+  $(document).ready(function() {
+        $(window).scroll(function() {
+            var sidebar = $("#sidebar");
+            var sidebare_behind = $("#sidebare-behind");
+            var scrollTop = $(window).scrollTop();
+
+            if (scrollTop >= 50) {
+                sidebar.addClass('fix-sidebar');
+                sidebare_behind.removeClass('hidden');
+            } else {
+                sidebar.removeClass('fix-sidebar');
+                sidebare_behind.addClass('hidden');
+            }
+        });
+    });
+
+</script>
 
 

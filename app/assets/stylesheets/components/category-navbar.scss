@@ -5,8 +5,11 @@
   padding-bottom: 9px;
   // position: fixed;
   // top: 1;
+  // left: 0;
   // background-color: #FAFBFD;
   // margin-top: -9px;
+  display: flex;
+  align-items: center;
   a{
     display: inline-block;
     padding: 5px 20px;
@@ -15,9 +18,7 @@
     margin: 0 5px;
     color: #5F666F;
     text-decoration: none;
-    &:first-child{
-      margin-left: 20px;
-    }
+
     &:hover{
       border-color: #585454;
     }
@@ -27,6 +28,37 @@
     color: #1954FF;
     background-color: #EAEFFF;
   }
+}
+.btn-mobile-sidebar{
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  .btn-mobile-sidebar{
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    i{
+      font-size: 20px;
+      color: black;
+    }
+    span{
+      margin-left: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Roboto', sans-serif;
+      color: black;
+    }
+  }
+}
+
+.navbar{
+  margin-bottom: 0;
+  min-height: 0;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

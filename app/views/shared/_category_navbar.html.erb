@@ -1,4 +1,10 @@
-<div id="category-menu" class="category-navbar">
+<div id="category-menu" class="container-fluid category-navbar">
+  <% if (params[:action] == "index" && params[:controller] == "events") %>
+    <button type="button" id="sidebarCollapse" class= "btn-mobile-sidebar">
+        <i class="fa fa-bars"></i>
+        <span>Filters</span>
+    </button>
+  <% end %>
   <a href="/events?utf8=✓&search=&category=0" id="all-btn" class= "active">All</a>
   <% Category.all.each do |category| %>
     <a class="category-btn" href="/events?utf8=✓&search=&category=<%=category.id %>"><%= category.name %></a>
