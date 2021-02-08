@@ -77,13 +77,14 @@ GEM
       will_paginate
     builder (3.2.4)
     byebug (11.1.3)
-    carrierwave (2.1.0)
+    carrierwave (2.1.1)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
       addressable (~> 2.6)
       image_processing (~> 1.1)
       mimemagic (>= 0.3.0)
       mini_mime (>= 0.1.3)
+      ssrf_filter (~> 1.0)
     carrierwave-aws (1.5.0)
       aws-sdk-s3 (~> 1.0)
       carrierwave (~> 2.0)
@@ -95,7 +96,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.6)
+    concurrent-ruby (1.1.8)
     crass (1.0.6)
     debug_inspector (0.0.3)
     docile (1.1.5)
@@ -105,7 +106,7 @@ GEM
       railties (>= 3.2, < 6.1)
     erubis (2.7.0)
     execjs (2.7.0)
-    ffi (1.12.2)
+    ffi (1.14.2)
     font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     formatador (0.2.5)
@@ -168,7 +169,7 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     rack (2.2.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -239,13 +240,14 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
+    ssrf_filter (1.0.7)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
-    tzinfo (1.2.7)
+    tzinfo (1.2.9)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -268,7 +270,7 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.10)
   by_star!
   byebug
-  carrierwave (~> 2.0)
+  carrierwave (~> 2.1)
   carrierwave-aws
   coffee-rails (~> 4.1.0)
   dotenv-rails

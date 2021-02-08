@@ -32,7 +32,7 @@ gem 'sass-rails', '>= 3.2'
 gem 'font-awesome-sass'
 #Image support
 gem 'carrierwave-aws'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '4.9.4'
 #Ruby I18n
 gem 'i18n'
